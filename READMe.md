@@ -17,6 +17,8 @@ João Marcos Araújo do Valle <jmarcos.araujo96@gmail.com>
   - [3. Histogramas](#3-histogramas)
     - [3.1 Equalizador de Histogramas](#31-equalizador-de-histogramas)
       - [Código](#c%C3%B3digo-3)
+    - [Detector de Movimento](#detector-de-movimento)
+      - [Código](#c%C3%B3digo-4)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 

@@ -1,6 +1,9 @@
-## PROCESSAMENTO DIGITAL DE IMAGENS - UFRN
+# PROCESSAMENTO DIGITAL DE IMAGENS - UFRN
 João Marcos Araújo do Valle
 
+:toc-title:Sumário
+:toc-levels:2
+:toc:right
 
 
 ## Unidade 1

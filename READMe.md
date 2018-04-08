@@ -17,9 +17,6 @@
 >>>>>>> f349e6308884953c0f7c89b1ac2a491909875965
 João Marcos Araújo do Valle
 
-:toc-title:Sumário
-:toc-levels:2
-:toc:right
 
 
 ## Unidade 1

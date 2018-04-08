@@ -3,11 +3,12 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
-- [PROCESSAMENTO DIGITAL DE IMAGENS - UFRN](#processamento-digital-de-imagens---ufrn)
-- [Unidade 1](#unidade-1)
-  - [2. Manipulando Pixels em Uma imagem](#2-manipulando-pixels-em-uma-imagem)
-    - [2.1. Efeito Negativo](#21-efeito-negativo)
-      - [Código](#c%C3%B3digo)
+  - [PROCESSAMENTO DIGITAL DE IMAGENS - UFRN](#processamento-digital-de-imagens---ufrn)
+- [PROCESSAMENTO DIGITAL DE IMAGENS - UFRN](#processamento-digital-de-imagens---ufrn-1)
+  - [Unidade 1](#unidade-1)
+    - [2. Manipulando Pixels em Uma imagem](#2-manipulando-pixels-em-uma-imagem)
+      - [2.1. Efeito Negativo](#21-efeito-negativo)
+        - [Código](#c%C3%B3digo)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 

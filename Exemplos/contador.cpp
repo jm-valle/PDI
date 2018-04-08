@@ -49,7 +49,14 @@ int main(int argc, char** argv){
 
   //Contando os buracos
   int num_buracos = 0;
- 
+ /*
+ O Loop Funciona da seguinte maneira: depois que o fundo da imagem
+ foi preenchido com tons de cinza 80 e as bolhas foram preenchidas
+ com o tom de cinza 190, os conjuntos de pixels restantes que forem
+ em tom de cinza 0 são os buracos, então a cada pixel com tom 0 que
+ é encontrado, conta-se como um buraco, e realiza um floodFill para
+ que não seja contado de novo
+ */
   for(int i = 0; i < height; i++){
       for(int j = 0; j < width; j++){
           if(image.at<uchar>(i,j) == 0){

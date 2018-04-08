@@ -37,7 +37,8 @@ int main(int, char**){
     quad2 = image(Rect(alturaq,0,alturaq,larguraq)); //Quadrante 2 original
     quad3 = image(Rect(0,larguraq,alturaq,larguraq)); //Quadrante 3 original
     quad4 = image(Rect(alturaq,larguraq,alturaq,larguraq)); //Quadrante 4 original
-
+    
+    //Aqui, copiamos os quadrantes originais para as posições desejadas
     quad1.copyTo(imagemdf(Rect(alturaq,larguraq,alturaq,larguraq)));
     quad2.copyTo(imagemdf(Rect(0,larguraq,alturaq,larguraq)));
     quad3.copyTo(imagemdf(Rect(alturaq,0,alturaq,larguraq)));

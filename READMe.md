@@ -3,9 +3,8 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 (https://github.com/thlorenz/doctoc)*
 
-  - [PROCESSAMENTO DIGITAL DE IMAGENS - UFRN](#processamento-digital-de-imagens---ufrn)
-- [PROCESSAMENTO DIGITAL DE IMAGENS - UFRN](#processamento-digital-de-imagens---ufrn-1)
-  - [Unidade 1](#unidade-1)
+- [PROCESSAMENTO DIGITAL DE IMAGENS - UFRN](#processamento-digital-de-imagens---ufrn)
+- [Unidade 1](#unidade-1)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 

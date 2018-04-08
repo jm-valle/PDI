@@ -5,16 +5,19 @@ João Marcos Araújo do Valle <jmarcos.araujo96@gmail.com>
 
 
 - [Unidade 1](#unidade-1)
-  - [2. Manipulando Pixels em Uma imagem](#2-manipulando-pixels-em-uma-imagem)
-    - [2.1. Efeito Negativo](#21-efeito-negativo)
+  - [1. Manipulando Pixels em Uma imagem](#1-manipulando-pixels-em-uma-imagem)
+    - [1.1. Efeito Negativo](#11-efeito-negativo)
       - [Código](#c%C3%B3digo)
+  - [2.Preenchendo Regiões](#2preenchendo-regi%C3%B5es)
+    - [2.1. Algoritmo Contador](#21-algoritmo-contador)
+      - [Código](#c%C3%B3digo-1)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 
 ## Unidade 1
-### 2. Manipulando Pixels em Uma imagem
-#### 2.1. Efeito Negativo
+### 1. Manipulando Pixels em Uma imagem
+#### 1.1. Efeito Negativo
 
 ##### Código
 
@@ -82,7 +85,90 @@ int main(int, char**){
 
 }
 ```
+### 2.Preenchendo Regiões 
+#### 2.1. Algoritmo Contador
 
+##### Código
 
+```c++
+#include <iostream>
+#include <opencv2/opencv.hpp>
+
+using namespace std;
+using namespace cv;
+
+int main(int argc, char** argv){
+  Mat image, mask;
+  int width, height;
+  int nobjects;
+  
+  CvPoint p;
+  image = imread(argv[1],CV_LOAD_IMAGE_GRAYSCALE);
+  
+  if(!image.data){
+    std::cout << "imagem nao carregou corretamente\n";
+    return(-1);
+  }
+  width=image.size().width;
+  height=image.size().height;
+
+  p.x=0;
+  p.y=0;
+
+  //realizar a eliminação de objetos nas bordas
+
+  for(int aux = 0; aux < height; aux++){
+      floodFill(image, CvPoint(aux,0), 0);
+      floodFill(image, CvPoint(aux,255), 0);
+      floodFill(image, CvPoint(0,aux), 0);
+      floodFill(image, CvPoint(255,aux), 0);
+  }
+
+  // busca objetos com buracos presentes
+  nobjects=0;
+  for(int i=0; i<height; i++){
+    for(int j=0; j<width; j++){
+      if(image.at<uchar>(i,j) == 255){
+		// achou um objeto
+		nobjects++;
+		p.x=j;
+		p.y=i;
+		floodFill(image,p,190);
+	  }
+	}
+  }
+  //preencher o fundo da imagem com o tom de cinza 80
+  floodFill(image, cvPoint(0,0), 80);
+
+  //Contando os buracos
+  int num_buracos = 0;
+ /*
+ O Loop Funciona da seguinte maneira: depois que o fundo da imagem
+ foi preenchido com tons de cinza 80 e as bolhas foram preenchidas
+ com o tom de cinza 190, os conjuntos de pixels restantes que forem
+ em tom de cinza 0 são os buracos, então a cada pixel com tom 0 que
+ é encontrado, conta-se como um buraco, e realiza um floodFill para
+ que não seja contado de novo
+ */
+  for(int i = 0; i < height; i++){
+      for(int j = 0; j < width; j++){
+          if(image.at<uchar>(i,j) == 0){
+              p.x = j;
+              p.y = i;
+              floodFill(image, p, 80);
+
+              num_buracos++;
+
+          }
+      }
+  }
+  cout << "Numero de objetos: " << nobjects << endl;
+  cout << "Numero de buracos: " << num_buracos << endl;
+  imshow("image", image);
+  imwrite("labeling.png", image);
+  waitKey();
+  return 0;
+}
+```
 
 

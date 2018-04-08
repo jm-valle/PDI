@@ -37,7 +37,7 @@ int main(int argc, char** argv){
   while(1){
     cap >> image;
     split (image, planes);
-
+    //Este merge é feito para termos uma janela com a imagem original
     merge(planes, image_original);
     //Equalização das capturas
     equalizeHist(planes[0], planes[0]);

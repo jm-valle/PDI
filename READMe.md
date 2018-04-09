@@ -15,14 +15,18 @@ João Marcos Araújo do Valle <jmarcos.araujo96@gmail.com>
   - [2.Preenchendo Regiões](#2preenchendo-regi%C3%B5es)
     - [2.1. Algoritmo Contador](#21-algoritmo-contador)
       - [Código](#c%C3%B3digo-2)
+      - [Resultado](#resultado-2)
   - [3. Histogramas](#3-histogramas)
     - [3.1 Equalizador de Histogramas](#31-equalizador-de-histogramas)
       - [Código](#c%C3%B3digo-3)
+      - [Resultado](#resultado-3)
     - [Detector de Movimento](#detector-de-movimento)
       - [Código](#c%C3%B3digo-4)
+      - [Resultado](#resultado-4)
   - [Filtros Espaciais I](#filtros-espaciais-i)
     - [Laplaciano do Gaussiano](#laplaciano-do-gaussiano)
       - [Código](#c%C3%B3digo-5)
+      - [Resultado](#resultado-5)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -163,6 +167,8 @@ int main(int, char**){
 
 ##### Resultado
 
+[Saída trocaderegioes.cpp](Exemplos/trocaderegioes.png)
+
 
 ### 2.Preenchendo Regiões 
 #### 2.1. Algoritmo Contador
@@ -249,6 +255,10 @@ int main(int argc, char** argv){
   return 0;
 }
 ```
+##### Resultado
+
+[Saída contador.cpp](Exemplos/contador.png)
+
 ### 3. Histogramas
 #### 3.1 Equalizador de Histogramas
 
@@ -346,6 +356,10 @@ int main(int argc, char** argv){
   return 0;
 }
 ``` 
+##### Resultado
+
+[Saída histograma.cpp](Exemplos/histograma.png)
+
 
 #### Detector de Movimento
 
@@ -418,6 +432,10 @@ int main(int argc, char** argv){
   return 0;
 }
 ```
+##### Resultado
+
+[Saída motiondetector.cpp](Exemplos/motiondetector.png)
+
 
 ### Filtros Espaciais I
 
@@ -560,3 +578,6 @@ int main(int argvc, char** argv){
   return 0;
 }
 ```
+##### Resultado
+
+[Saída laplgauss.cpp](Exemplos/laplgauss.png)

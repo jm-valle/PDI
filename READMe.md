@@ -8,9 +8,10 @@ João Marcos Araújo do Valle <jmarcos.araujo96@gmail.com>
   - [1. Manipulando Pixels em Uma imagem](#1-manipulando-pixels-em-uma-imagem)
     - [1.1. Efeito Negativo](#11-efeito-negativo)
       - [Código](#c%C3%B3digo)
+      - [Resultado](#resultado)
     - [1.2. Mudança de Quadrantes](#12-mudan%C3%A7a-de-quadrantes)
       - [Código](#c%C3%B3digo-1)
-      - [Resultado](#resultado)
+      - [Resultado](#resultado-1)
   - [2.Preenchendo Regiões](#2preenchendo-regi%C3%B5es)
     - [2.1. Algoritmo Contador](#21-algoritmo-contador)
       - [Código](#c%C3%B3digo-2)
@@ -96,6 +97,10 @@ int main(int, char**){
 
 }
 ```
+##### Resultado
+[Saída Regions.cpp](Exemplos/regions.png)
+
+
 #### 1.2. Mudança de Quadrantes
 
 ##### Código

@@ -98,6 +98,7 @@ int main(int, char**){
 }
 ```
 ##### Resultado
+
 [Saída Regions.cpp](Exemplos/regions.png)
 
 

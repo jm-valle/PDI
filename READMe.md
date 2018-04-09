@@ -19,7 +19,7 @@ João Marcos Araújo do Valle <jmarcos.araujo96@gmail.com>
       - [Código](#c%C3%B3digo-3)
     - [Detector de Movimento](#detector-de-movimento)
       - [Código](#c%C3%B3digo-4)
-  - [Filtros Espaciais](#filtros-espaciais)
+  - [Filtros Espaciais I](#filtros-espaciais-i)
     - [Laplaciano do Gaussiano](#laplaciano-do-gaussiano)
       - [Código](#c%C3%B3digo-5)
 
@@ -413,7 +413,7 @@ int main(int argc, char** argv){
 }
 ```
 
-### Filtros Espaciais
+### Filtros Espaciais I
 
 #### Laplaciano do Gaussiano
 

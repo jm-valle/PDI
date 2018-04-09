@@ -541,7 +541,7 @@ int main(int argvc, char** argv){
       mask = Mat(3, 3, CV_32F, laplacian);
       printmask(mask);
       break;
-    //Implementação do laplaciano+gaussiano
+    //Implementação do laplaciano do gaussiano
     case 'n':
         menu();
         mask = Mat(5, 5, CV_32F, laplgauss);

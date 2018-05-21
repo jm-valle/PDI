@@ -864,7 +864,7 @@ int main(int , char**){
 ```
 ##### Resultado
 
-[Saída homomorfico.cpp](Exemplos/homomorfico.cpp)
+[Saída homomorfico.cpp](Exemplos/homomorfico.png)
 
 ### 8. Detecção de Bordas Com o Algoritmo de Canny
 #### Pontilhismo utilizando o Algoritmo de Canny

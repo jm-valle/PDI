@@ -1,7 +1,17 @@
 #include <opencv2/opencv.hpp>
 #include <cstdlib>
+#include <string>
+
 
 using namespace cv;
+using namespace std;
+/* Para este código, foi modificado apenas o numero de rodadas
+e a flag do kmeans, que foi definida como KMEANS_RANDOM_CENTERS
+Além disso o código foi colocado dentro de um loop, pois o 
+ao executar o código fora do loop, o resultado foi sempre o mesmo
+o que indica que o OpenCV provavelmente está usando a mesma
+Seed para a criação da variável aleatória
+*/
 
 int main( int argc, char** argv ){
   int nClusters = 6;
@@ -13,6 +23,7 @@ int main( int argc, char** argv ){
 	exit(0);
   }
   
+  for(int i = 0; i < 10; i++){
   Mat img = imread( argv[1], CV_LOAD_IMAGE_COLOR);
   Mat samples(img.rows * img.cols, 3, CV_32F);
 
@@ -42,7 +53,11 @@ int main( int argc, char** argv ){
 	  rotulada.at<Vec3b>(y,x)[2] = (uchar) centros.at<float>(indice, 2);
 	}
   }
-  imshow( "clustered image", rotulada );
-  imwrite(argv[2], rotulada);
-  waitKey( 0 );
+  //imshow( "clustered image", rotulada );
+  string auxiliar = argv[2];
+  string nomeimagem = auxiliar + to_string(i) + ".jpg";
+   char *nomeimagem1 = &nomeimagem[0u];
+  imwrite(nomeimagem1, rotulada);
+  }
+  
 }

@@ -1069,6 +1069,8 @@ Os resultados observados diferem pela inicialização aleatória do
 algoritmo k-means. Como é realizada apenas uma rodada, os clusters
 não irão sempre converger para o mesmo resultado, por causa da 
 inicialização aleatória
+
+
 [Imagem Original](Exemplos/gorillaz.jpg)
 
 [Imagens Após a execução do K-means](Exemplos/resultadokmeans.png)

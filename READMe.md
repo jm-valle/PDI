@@ -1075,3 +1075,14 @@ inicialização aleatória
 
 [Imagens Após a execução do K-means](Exemplos/resultadokmeans.png)
 
+
+### Projeto da Terceira Unidade - Matrizes de Co-ocorrência
+
+####Descrição do projeto
+
+O projeto da terceira unidade consiste em uma aplicação JavaScript que utiliza o OpenJS para o cálculo de alguns descritores de Haralick para matrizes de co-ocorrência.
+
+---
+
+Acessar página do [Projeto][/projeto-final/doc_terc_unid.md]
+

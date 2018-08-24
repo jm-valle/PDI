@@ -1,6 +1,9 @@
 #PDI - Trabalho Final - Matrizes de Co-ocorrência e Análise de Textura
 Autores: João Marcos Araújo do Valle <jmarcos.araujo96@gmail.com>, Vanessa Dantas <vanessa.dantas796@gmail.com>
 
+---
+Este material consiste no Trabalho Final da disciplina DCA0445 - Processamento Digital de Imagens lecionada por Agostinho Brito Jr.
+
 ##Aplicação
 Acessar via [Aplicação][link]
 

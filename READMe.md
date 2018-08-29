@@ -1085,5 +1085,5 @@ O projeto da terceira unidade consiste em uma aplicação JavaScript que utiliza
 
 ---
 
-Acessar página do [Projeto][/TrabFinal/doc_terc_unid.md]
+Acessar página do [Projeto](TrabFinal/doc_terc_unid.md)
 

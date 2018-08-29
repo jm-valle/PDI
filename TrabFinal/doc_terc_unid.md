@@ -1,18 +1,32 @@
-#PDI - Trabalho Final - Matrizes de Co-ocorrência e Análise de Textura
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [PDI - Trabalho Final - Matrizes de Co-ocorrência e Análise de Textura](#pdi---trabalho-final---matrizes-de-co-ocorr%C3%AAncia-e-an%C3%A1lise-de-textura)
+  - [Aplicação](#aplica%C3%A7%C3%A3o)
+  - [Introdução](#introdu%C3%A7%C3%A3o)
+  - [Referencial Teórico](#referencial-te%C3%B3rico)
+    - [Métodos para o cálculo da matriz de co-ocorrência](#m%C3%A9todos-para-o-c%C3%A1lculo-da-matriz-de-co-ocorr%C3%AAncia)
+    - [Descritores de Haralick](#descritores-de-haralick)
+  - [Interface](#interface)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+# PDI - Trabalho Final - Matrizes de Co-ocorrência e Análise de Textura
 Autores: João Marcos Araújo do Valle <jmarcos.araujo96@gmail.com>, Vanessa Dantas <vanessa.dantas796@gmail.com>
 
 ---
 Este material consiste no Trabalho Final da disciplina DCA0445 - Processamento Digital de Imagens lecionada por Agostinho Brito Jr.
 
-##Aplicação
+## Aplicação
 Acessar via [Aplicação][link]
 
-##Introdução
+## Introdução
 <p>Ao longo da terceira unidade da disciplina DCA0445 - Processamento Digital de Imagens, foram expostos em sala de aula vários métodos para a representação e descrição de regiões. Um desses foi a descrição de regiões por análise de textura, através de descritores de Haralick, calculados a partir de matrizes de co-ocorrência.</p>
 <p>Esse trabalho teve por objetivo criar uma aplicação JavaScript onde uma imagem é carregada e a partir desta, são calculados, em tempo real, seis tipos de descritores diferentes para uma região de interesse específica da imagem, que é selecionada pelo usuário da aplicação.
 </p>
 
-##Referencial Teórico
+## Referencial Teórico
 <p>A textura é normalmente definida como uma superfície topográfica, com pontos altos e baixos. Uma textura áspera geralmente é caracterizada por uma grande diferença entre esses pontos em um espaço pequeno. Já uma textura lisa é caracterizada por pouca diferença em um espaço de mesmo tamanho.</p>
 <p>A partir dessa definição de textura, podemos fazer um paralelo com texturas de imagens, onde, ao invés de termos diferenças entre pontos altos e baixos, temos a diferença entre o brilho dos pixels em uma região pré-estabelecida.
 A análise da textura de uma imagem pode ser realizada de diversas maneiras. Uma destas maneiras é através da matriz de co-ocorrência, foco deste trabalho.</p> 
@@ -22,7 +36,7 @@ Também é importante destacar que geralmente as imagens analisadas apresentam a
 
 ---
 
-###Métodos para o cálculo da matriz de co-ocorrência
+### Métodos para o cálculo da matriz de co-ocorrência
 <p>Foi mencionado anteriormente que existem vários métodos de se calcular a matriz de co-ocorrência de uma imagem, o que é fácil de perceber quando relacionado com o conceito de vizinhança de um pixel. Se a matriz de co-ocorrência é definida como uma tabela de combinações de tons de cinza ocorridos em uma imagem, é justificável que essa tabela possa ser criada de qualquer combinação entre pixels relacionados através de uma vizinhança. Isso quer dizer que uma matriz de co-ocorrência pode ser calculada utilizando qualquer um dos oito pixels da vizinhança do pixel atual.</p>
 <p>Matematicamente, uma matriz de co-ocorrência P pode ser definida em função de quatro valores _P(i, j, d, Theta)_. Onde i e j são os pixels vizinhos de acordo com a distância d. Essa distância d entre os pixels i e j é analisada de acordo com uma direção Theta, como pode ser observado na imagem abaixo.</p>
 IMAGEM 1
@@ -37,11 +51,11 @@ IMAGEM 2
 
 ---
 
-###Descritores de Haralick
+### Descritores de Haralick
 <p>Apesar de uma matriz de co-ocorrência, por si só, apresentar muita informação, esta informação geralmente não é de fácil entendimento. Sendo assim, a partir dessa matriz, são calculados valores numéricos que facilitam o entendimento da informação que a matriz trás.</p>
 <p>Estes valores, denominados descritores, são fundamentais para a análise de uma matriz de co-ocorrência. Haralick, em 1973, propôs 14 descritores diferentes que poderiam ser utilizados para a extração de informação da matriz de co-ocorrência, neste trabalho, foram implementados seis descritores de Haralick, mostrados na tabela abaixo.</p>
 IMAGEM 3
 
-##Interface
+## Interface
 <p>Para a aplicação desenvolvida, implementamos uma interface dividida entre cabeçalho, corpo e rodapé. No cabeçalho, inserimos o título do trabalho "Cálculo de Co-ocorrências e momentos estatísticos de  uma região da imagem". No corpo, foram criadas duas regiões, uma destinada para o carregamento da imagem e exibição da região de interesse, e outra, para exibir as informações de co-ocorrências e modificar os parâmetros que delimitam a região de interesse (representada por um quadrado preto). No rodapé, apenas inserimos informações acerca do trabalho e direitos autorais. Além disso, foi feito um botão de retorno, permitindo ao usuário voltar a página do relatório do trabalho. Corforme a imagem:</p>
 

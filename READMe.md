@@ -41,6 +41,7 @@ João Marcos Araújo do Valle <jmarcos.araujo96@gmail.com>
       - [Código](#c%C3%B3digo-8)
       - [Resultado](#resultado-8)
   - [Projeto da Terceira Unidade - Matrizes de Co-ocorrência](#projeto-da-terceira-unidade---matrizes-de-co-ocorr%C3%AAncia)
+    - [Descrição do projeto](#descri%C3%A7%C3%A3o-do-projeto)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 

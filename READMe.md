@@ -1079,7 +1079,7 @@ inicialização aleatória
 
 ### Projeto da Terceira Unidade - Matrizes de Co-ocorrência
 
-####Descrição do projeto
+#### Descrição do projeto
 
 O projeto da terceira unidade consiste em uma aplicação JavaScript que utiliza a biblioteca OpenJS para o cálculo de alguns descritores de Haralick para matrizes de co-ocorrência.
 

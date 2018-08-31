@@ -443,7 +443,7 @@ Também é importante destacar que geralmente as imagens analisadas apresentam a
 
 
 ## 7. Explicação do Código
-<p>Primeiramente, na estrutura do html implementamos o cabeçalho \<head>\, nele especificamos a cor de fundo através de style="background-color:#4A708B". Veja: </p>
+<p>Primeiramente, na estrutura do html implementamos o cabeçalho, nele especificamos a cor de fundo através de style="background-color:#4A708B". Veja: </p>
 
         <html>
 
@@ -456,7 +456,7 @@ Também é importante destacar que geralmente as imagens analisadas apresentam a
 
         </head>
 
-<p>Em seguida, na primeira parte do corpo da estrutura html `<body>`, foi criada a região para exibir os cálculoiis das co-ocorrências e os sliders responsáveis pela delimitação da região de interesse, bem como o botão de retorno. Esta região foi criada com id="Informacoes".</p>
+<p>Em seguida, na primeira parte do corpo da estrutura html, foi criada a região para exibir os cálculoiis das co-ocorrências e os sliders responsáveis pela delimitação da região de interesse, bem como o botão de retorno. Esta região foi criada com id="Informacoes".</p>
 
  <p>Para as informações de co-ocorrências exibidas, apenas criamos uma região do tipo texto, na qual pudéssemos exibir os resultados calculados.</p>
 
@@ -517,7 +517,7 @@ Também é importante destacar que geralmente as imagens analisadas apresentam a
 
         <button onclick="Retornar()" id="botaoRetornar" style="margin-left:45%;">Retornar</button>
 
-<p>Em seguida, na segunda parte do corpo da estrutura html `<body>`, foi criada a região para carregamento da imagem e exibição da região de interesse com id="CarregamentoDaImagem".</p>
+<p>Em seguida, na segunda parte do corpo da estrutura html, foi criada a região para carregamento da imagem e exibição da região de interesse com id="CarregamentoDaImagem".</p>
 
 <p>Para o carregamento da imagem, utilizamos o tipo file para escolher o arquivo a ser carregado em:</p>
 

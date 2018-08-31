@@ -79,12 +79,11 @@ Também é importante destacar que geralmente as imagens analisadas apresentam a
 <p>Para a aplicação desenvolvida, implementamos uma interface dividida entre cabeçalho, corpo e rodapé. No cabeçalho, inserimos o título do trabalho "Cálculo de Co-ocorrências e momentos estatísticos de  uma região da imagem". No corpo, foram criadas duas regiões, uma destinada para o carregamento da imagem e exibição da região de interesse, e outra, para exibir as informações de co-ocorrências e modificar os parâmetros que delimitam a região de interesse (representada por um quadrado preto). No rodapé, apenas inserimos informações acerca do trabalho e direitos autorais. Além disso, foi feito um botão de retorno, permitindo ao usuário voltar a página do relatório do trabalho. Conforme a imagem:</p>
 
 ![](imagens/imagem5.png)
-Figure 5. Interface da aplicação
+<p>Figure 5. Interface da aplicação</p>
 
 ## 6. Código Desenvolvido
 <p> Para o trabalho descrito, desenvolvemos um código utilizando as linguagens Html e JavaScript. O Html foi responsável pela criação da estrutura da página WEB, já o CSS permitiu estilização da página. Por fim, o JavaScript corresponde ao funcionamento da estrutura WEB. Ele que possibilitou o uso de recursos do openCV.js para manipulação de imagens. Abaixo, o código desenvolvido: </p>
 
-´´´html
 
         <html>
 
@@ -442,12 +441,9 @@ Figure 5. Interface da aplicação
 
         </html>
 
-´´´
 
 ## 7. Explicação do Código
-<p>Primeiramente, na estrutura do html implementamos o cabeçalho `<head>`, nele especificamos a cor de fundo através de style="background-color:#4A708B". Veja: </p>
-
-´´´html
+<p>Primeiramente, na estrutura do html implementamos o cabeçalho \<head>\, nele especificamos a cor de fundo através de style="background-color:#4A708B". Veja: </p>
 
         <html>
 
@@ -459,7 +455,6 @@ Figure 5. Interface da aplicação
         </div>
 
         </head>
-´´´
 
 <p>Em seguida, na primeira parte do corpo da estrutura html `<body>`, foi criada a região para exibir os cálculoiis das co-ocorrências e os sliders responsáveis pela delimitação da região de interesse, bem como o botão de retorno. Esta região foi criada com id="Informacoes".</p>
 
@@ -553,7 +548,7 @@ Figure 5. Interface da aplicação
 
 <p>Neste script, a primeira função realizada é a de abertura e carregamento da imagem. Isto é feia através de: </p>
 
-//carregar imagem
+        //carregar imagem
         let imgElement = document.getElementById('imagem');
         let inputElement = document.getElementById('fileUpload');
         inputElement.addEventListener('change', (e) => {
@@ -569,7 +564,7 @@ Figure 5. Interface da aplicação
 <p>Na função change(), primeiramente definimos a região de interesse, através do código:</p>
 
 
-//com base nos trackbars definimos a regiao de interesse RI
+        //com base nos trackbars definimos a regiao de interesse RI
             var posHor=document.getElementById("moverHorizontalmente").value;
             var posVert=document.getElementById("moverVerticalmente").value;
 

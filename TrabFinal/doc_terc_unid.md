@@ -844,7 +844,7 @@ Também é importante destacar que geralmente as imagens analisadas apresentam a
 
 ## 10. Referências
 
-![](http://www2.ic.uff.br/~aconci/co-ocorrencia.pdf)
+http://www2.ic.uff.br/~aconci/co-ocorrencia.pdf
 
 ![](https://docs.opencv.org/3.4.1/d4/da1/tutorial_js_setup.html)
 

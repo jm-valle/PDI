@@ -51,18 +51,18 @@ Também é importante destacar que geralmente as imagens analisadas apresentam a
 <p>Foi mencionado anteriormente que existem vários métodos de se calcular a matriz de co-ocorrência de uma imagem, o que é fácil de perceber quando relacionado com o conceito de vizinhança de um pixel. Se a matriz de co-ocorrência é definida como uma tabela de combinações de tons de cinza ocorridos em uma imagem, é justificável que essa tabela possa ser criada de qualquer combinação entre pixels relacionados através de uma vizinhança. Isso quer dizer que uma matriz de co-ocorrência pode ser calculada utilizando qualquer um dos oito pixels da vizinhança do pixel atual.</p>
 <p>Matematicamente, uma matriz de co-ocorrência P pode ser definida em função de quatro valores _P(i, j, d, Theta)_. Onde i e j são os pixels vizinhos de acordo com a distância d. Essa distância d entre os pixels i e j é analisada de acordo com uma direção Theta, como pode ser observado na imagem abaixo.</p>
 
-![](/imagens/imagem1.png)
+[](/imagens/imagem1.png)
 Figure 2. Valores possíveis para Theta
 
 <p>Para cada ângulo (0º, 45º, 90º e 135º) é possível calcular duas matrizes de co-ocorrência, totalizando assim oito matrizes no total. Também é possível calcular uma matriz para cada direção orientada por ângulo, o que resulta em quatro matrizes (horizontal, vertical e duas diagonais). Existem várias vantagens no cálculo desse tipo de matriz, uma delas é que a matriz de co-ocorrência conterá mais informação que uma criada apenas para apenas uma direção orientada por um ângulo.</p>
 <p>Outra vantagem da matriz de co-ocorrência para cada direção orientada por ângulo é que ela pode ser facilmente calculada a partir da matriz de co-ocorrência normal de cada direção, visto que ela será a soma dos elementos da matriz espelhados pela diagonal da matriz.</p>
 
-![](/imagens/imagem2.png)
+[](/imagens/imagem2.png)
 Figure 2. Cálculo da matriz de co-ocorrência para P(i,j,1,0º)
 
 <p>Após P ser calculada, normalmente, é também normalizada pela soma total de seus valores, criando assim uma matriz de probabilidade de co-ocorrências p(i,j) onde</p>
 
-![](/imagens/imagem3.png)
+[](/imagens/imagem3.png)
 Figure 3. Matriz de probabilidade
 
 <p>A partir dessa matriz de probabilidades _p(i,j)_ é que as principais informações contidas na imagem serão retiradas.</p>
@@ -72,7 +72,7 @@ Figure 3. Matriz de probabilidade
 <p>Apesar de uma matriz de co-ocorrência, por si só, apresentar muita informação, esta informação geralmente não é de fácil entendimento. Sendo assim, a partir dessa matriz, são calculados valores numéricos que facilitam o entendimento da informação que a matriz trás.</p>
 <p>Estes valores, denominados descritores, são fundamentais para a análise de uma matriz de co-ocorrência. Haralick, em 1973, propôs 14 descritores diferentes que poderiam ser utilizados para a extração de informação da matriz de co-ocorrência, neste trabalho, foram implementados seis descritores de Haralick, mostrados na tabela abaixo.</p>
 
-![](/imagens/imagem4.png)
+[](/imagens/imagem4.png)
 Figure 4. Tabela com o cálculo dos descritores de Haralick
 
 ---
@@ -80,27 +80,27 @@ Figure 4. Tabela com o cálculo dos descritores de Haralick
 ## 5. Interface
 <p>Para a aplicação desenvolvida, implementamos uma interface dividida entre cabeçalho, corpo e rodapé. No cabeçalho, inserimos o título do trabalho "Cálculo de Co-ocorrências e momentos estatísticos de  uma região da imagem". No corpo, foram criadas duas regiões, uma destinada para o carregamento da imagem e exibição da região de interesse, e outra, para exibir as informações de co-ocorrências e modificar os parâmetros que delimitam a região de interesse (representada por um quadrado preto). No rodapé, apenas inserimos informações acerca do trabalho e direitos autorais. Além disso, foi feito um botão de retorno, permitindo ao usuário voltar a página do relatório do trabalho. Conforme a imagem:</p>
 
-![](/imagens/imagem5.png)
+[](/imagens/imagem5.png)
 Figure 5. Interface da aplicação
 
 ## 6. Código Desenvolvido
 <p> Para o trabalho descrito, desenvolvemos um código utilizando as linguagens Html e JavaScript. O Html foi responsável pela criação da estrutura da página WEB, já o CSS permitiu estilização da página. Por fim, o JavaScript corresponde ao funcionamento da estrutura WEB. Ele que possibilitou o uso de recursos do openCV.js para manipulação de imagens. Abaixo, o código desenvolvido: </p>
 
 ´´´javascript
-<html>
+        <html>
 
-<head>
-<meta charset="utf-8">
-<div id="header" style="background-color:#4A708B;">
-<h1 align="center" style="margin-bottom:0;color:white;" >Cálculo de Co-ocorrências e momentos estatísticos de uma região da imagem</h1>
+        <head>
+        <meta charset="utf-8">
+        <div id="header" style="background-color:#4A708B;">
+        <h1 align="center" style="margin-bottom:0;color:white;" >Cálculo de Co-ocorrências e momentos estatísticos de uma região da imagem</h1>
 
-</div>
+        </div>
 
-</head>
+        </head>
 
-<body>
+        <body>
 
-<div id="Informacoes" style="background-color:#6CA6CD;height:100%;width:25%;float:right;">
+        <div id="Informacoes" style="background-color:#6CA6CD;height:100%;width:25%;float:right;">
 
 
         <h2 align="center" style="color:Black;" > Co-ocorrências </h2>
@@ -152,296 +152,296 @@ Figure 5. Interface da aplicação
         <button onclick="Retornar()" id="botaoRetornar" style="margin-left:45%;">Retornar</button>
 
 
-</div>
-
-<div id="CarregamentoDaImagem">
-        <table style="background-color:#B0E2FF;height:100%;width:75%;" cellpadding="0" cellspacing="0" width="0" border="0" id="table">
-
-    <tr>
-            <td>
-                    <div class="caption" id="inputcaption">Imagem de Entrada</div>
-            </td>
-            <td>
-                    <div class="caption" id="ouputcaption">Região de Interesse</div>
-            </td>
-         </tr>
-
-
-         <tr>
-            <td>
-                    <input type="file" name="myFile" id="fileUpload"/> <br />
-            </td>
-            <td>
-                        <p>A região de interesse está limitada pelo retângulo</p>
-
-            </td>
-
-          </tr>
-
-          <tr>
-            <td>
-                    <img src="" alt="Carregar Imagem..." width="350em" height="" style="border:1px solid #d3d3d3;" id="imagem"/>
-            </td>
-            <td>
-                    <canvas id="canvasOutput" width="" height="" style="border:1px solid #d3d3d3;"></canvas>
-            </td>
-
-          </tr>
-
-</table>
-</div>
-<!-- Javascript -->
-<script src="opencv.js" type="text/javascript"></script>
-<script type="text/javascript">
-        //carregar imagem
-        let imgElement = document.getElementById('imagem');
-        let inputElement = document.getElementById('fileUpload');
-        inputElement.addEventListener('change', (e) => {
-            imgElement.src = URL.createObjectURL(e.target.files[0]);
-        }, false);
-
-        imgElement.onload = function() {
-            change();
-        };
-
-        function change(){
-
-                var largura=document.getElementById("imagem").width;
-
-                //com base nos trackbars definimos a regiao de interesse RI
-            var posHor=document.getElementById("moverHorizontalmente").value;
-            var posVert=document.getElementById("moverVerticalmente").value;
-
-
-            var altura=document.getElementById("imagem").height;
-
-
-            var tamLado=document.getElementById("ladoQuadrado").value;
-            tamLado=tamLado*largura/100;
-
-            var RI_yIn=posHor*largura/100;
-            var RI_xIn=posVert*altura/100;
-
-            var RI_xFim=RI_xIn+tamLado;
-            var RI_yFim=RI_yIn+tamLado;
-
-            if(RI_xFim>altura){
-                    tamLado=(altura-RI_xIn);
-                    RI_xFim=RI_xIn+tamLado;
-                           RI_yFim=RI_yIn+tamLado;
-            }
-                if(RI_yFim>largura){
-                    tamLado=(largura-RI_yIn);
-                    RI_xFim=RI_xIn+tamLado;
-                           RI_yFim=RI_yIn+tamLado;
-            }
-
-            //converter imagem para matriz para tons de cinza
-                let mat = cv.imread(imgElement);
-                let image = new cv.Mat();
-                let gray = new cv.Mat();
-                cv.cvtColor(mat, gray, cv.COLOR_RGBA2GRAY, 0);
-                gray.copyTo(image);
-
-            //desenhar retangulo (Mat& img, Point pt1, Point pt2, const Scalar& color, int thickness=1, int lineType=8, int shift=0)
-            let rect = new cv.Rect(RI_yIn,RI_xIn,tamLado,tamLado);
-                let rectangleColor = new cv.Scalar(0, 0, 0);
-
-                let point1 = new cv.Point(rect.x, rect.y);
-                let point2 = new cv.Point(rect.x + rect.width, rect.y + rect.height);
-                cv.rectangle(gray, point1, point2, rectangleColor, 2, cv.LINE_AA, 0);
-
-            //exibir imagem com o retangulo desenhado
-                cv.imshow('canvasOutput', gray);
-
-
-                //calcular co-ocorrencias
-                var soma =0;
-                var i;
-                var j;
-
-                for (i = RI_yIn; i < RI_yFim; i++) {
-                        for(j = RI_xIn; j< RI_xFim;j++){
-                                soma=soma+image.ucharPtr(i,j)[0];
-                        }
-                }
-                //pij == image/soma
-
-                //probabilidade maxima
-
-                let result = cv.minMaxLoc(image);
-                let max = result.maxVal;
-            let probMax=max/soma;
-            document.getElementById("ProbMax").innerHTML='Probabilidade Máxima: '+probMax.toString();
-
-            //correlacao
-
-            //calcular mr
-            let mr=0;
-            for (i = RI_yIn; i < RI_yFim; i++) {
-                        for(j = RI_xIn; j< RI_xFim;j++){
-                                mr=mr+i*(image.ucharPtr(i,j)[0]/soma);
-                        }
-                }
-
-                //calcular mc
-                let mc=0;
-                for(j = RI_xIn; j< RI_xFim;j++){
-                        for (i = RI_yIn; i < RI_yFim; i++) {
-                                mc=mc+j*(image.ucharPtr(i,j)[0]/soma);
-                        }
-                }
-
-                //calcular deltar
-                let deltar=0;
-            for (i = RI_yIn; i < RI_yFim; i++) {
-                        for(j = RI_xIn; j< RI_xFim;j++){
-                                deltar=deltar+(i-mr)*(i-mr)*(image.ucharPtr(i,j)[0]/soma);
-                        }
-                }
-                deltar=Math.sqrt(deltar);
-                //calcular deltac
-                let deltac=0;
-                for(j = RI_xIn; j< RI_xFim;j++){
-                        for (i = RI_yIn; i < RI_yFim; i++) {
-                                deltac=deltac+(j-mc)*(j-mc)*(image.ucharPtr(i,j)[0]/soma);
-                        }
-                }
-                deltac=Math.sqrt(deltac);
-
-                //Agora podemos calcular a correlacao
-                let correlacao=0;
-
-                for (i = RI_yIn; i < RI_yFim; i++) {
-                        for(j = RI_xIn; j< RI_xFim;j++){
-                                correlacao=correlacao+(i-mr)*(j-mc)*(image.ucharPtr(i,j)[0]/soma)/(deltac*deltar);
-                        }
-                }
-
-                document.getElementById("Correlacao").innerHTML='Correlação: '+correlacao.toString();
-                //contraste
-
-                let contraste=0;
-
-                for (i = RI_yIn; i < RI_yFim; i++) {
-                        for(j = RI_xIn; j< RI_xFim;j++){
-                                contraste=contraste+(i-j)*(i-j)*(image.ucharPtr(i,j)[0]/soma);
-                        }
-                }
-
-
-
-                document.getElementById("Contraste").innerHTML='Contraste: '+contraste.toString();
-
-                //uniformidade
-
-                let uniformidade=0;
-
-                for (i = RI_yIn; i < RI_yFim; i++) {
-                        for(j = RI_xIn; j< RI_xFim;j++){
-                                uniformidade=uniformidade+(image.ucharPtr(i,j)[0]/soma)*(image.ucharPtr(i,j)[0]/soma);
-                        }
-                }
-
-                document.getElementById("Uniformidade").innerHTML='Uniformidade: '+uniformidade.toString();
-
-                //homogeneidade
-
-                let homogeneidade=0;
-
-                for (i = RI_yIn; i < RI_yFim; i++) {
-                        for(j = RI_xIn; j< RI_xFim;j++){
-                                homogeneidade=homogeneidade+(image.ucharPtr(i,j)[0]/soma)/(1+Math.abs(i-j));
-                        }
-                }
-
-
-                document.getElementById("Homogeneidade").innerHTML='Homogeneidade: '+homogeneidade.toString();
-
-                //entropia
-
-                let entropia=0;
-
-                for (i = RI_yIn; i < RI_yFim; i++) {
-                        for(j = RI_xIn; j< RI_xFim;j++){
-                                if(image.ucharPtr(i,j)[0]!=0){
-                                        entropia=entropia+(image.ucharPtr(i,j)[0]/soma)*Math.log2(soma/image.ucharPtr(i,j)[0]);
-                                }else{
-                                        entropia=entropia+(image.ucharPtr(i,j)[0]/soma)*Math.log2(soma/0.0001);
-                                }
-
-                        }
-                }
-                document.getElementById("Entropia").innerHTML='Entropia: '+entropia.toString();
-
-                mr.delete();
-                mc.delete();
-                deltar.delete();
-                deltac.delete();
-                correlacao.delete();
-                contraste.delete();
-                probMax.delete();
-                uniformidade.delete();
-                homogeneidade.delete();
-                entropia.delete();
-                max.delete();
-                result.delete();
-                pij.delete();
-                posHor.delete();
-                posVert.delete().
-                tamLado.delete();
-                altura.delete();
-                largura.delete();
-                RI_xIn.delete();
-                RI_yIn.delete();
-                RI_xFim.delete();
-                RI_yFim.delete();
-                gray.delete();
-                mat.delete();
-            image.delete();
-            rect.delete();
-            rectangleColor.delete();
-            point1.delete();
-            point2.delete();
-
-        }
-
-
-        //redirecionar para a pagina inicial do trabalho
-        function Retornar()
-        {
-                location.href="https://vanessadants.github.io/PDI/TrabFinal/index.html";
-        }
-
-        function onOpenCvReady() { // eslint-disable-line no-unused-vars
-            document.getElementById('status').innerHTML = '<b>OpenCV.js is ready</b>.' +
-                'You can upload an image.<br>' +
-                'The <b>imageSrc</b> is a &lt;img&gt; element used as cv.Mat input. ' +
-                'The <b>canvasOutput</b> is a &lt;canvas&gt; element used as cv.Mat output.';
-        }
-
-        function onOpenCvError() { // eslint-disable-line no-unused-vars
-            let element = document.getElementById('status');
-            element.setAttribute('class', 'err');
-            element.innerHTML = 'Failed to load opencv.js';
-        }
-
-
-
-
-</script>
-<script async src="opencv.js" type="text/javascript" onload="onOpenCvReady();" onerror="onOpenCvError();"></script>
-
-</body>
-
-<footer>
-        <div id="footer" style="background-color:#9FB6CD;clear:both;text-align:center;float:bottom;font-size:12">
-        Trabalho da terceira unidade de Processamento Digital de Imagens da Universidade Federal do RN do curso de Engenharia da Computação. Este trabalho foi feito por Vanessa Dantas de Souto Costa (vanessa.dantas796@gmail.com) e  João Marcos Araújo do Valle (jmarcos.araujo96@gmail.com), professor orientador: Agostinho Brito Jr.
         </div>
 
-</footer>
+        <div id="CarregamentoDaImagem">
+                <table style="background-color:#B0E2FF;height:100%;width:75%;" cellpadding="0" cellspacing="0" width="0" border="0" id="table">
 
-</html>
+        <tr>
+                <td>
+                        <div class="caption" id="inputcaption">Imagem de Entrada</div>
+                </td>
+                <td>
+                        <div class="caption" id="ouputcaption">Região de Interesse</div>
+                </td>
+                </tr>
+
+
+                <tr>
+                <td>
+                        <input type="file" name="myFile" id="fileUpload"/> <br />
+                </td>
+                <td>
+                                <p>A região de interesse está limitada pelo retângulo</p>
+
+                </td>
+
+                </tr>
+
+                <tr>
+                <td>
+                        <img src="" alt="Carregar Imagem..." width="350em" height="" style="border:1px solid #d3d3d3;" id="imagem"/>
+                </td>
+                <td>
+                        <canvas id="canvasOutput" width="" height="" style="border:1px solid #d3d3d3;"></canvas>
+                </td>
+
+                </tr>
+
+        </table>
+        </div>
+        <!-- Javascript -->
+        <script src="opencv.js" type="text/javascript"></script>
+        <script type="text/javascript">
+                //carregar imagem
+                let imgElement = document.getElementById('imagem');
+                let inputElement = document.getElementById('fileUpload');
+                inputElement.addEventListener('change', (e) => {
+                imgElement.src = URL.createObjectURL(e.target.files[0]);
+                }, false);
+
+                imgElement.onload = function() {
+                change();
+                };
+
+                function change(){
+
+                        var largura=document.getElementById("imagem").width;
+
+                        //com base nos trackbars definimos a regiao de interesse RI
+                var posHor=document.getElementById("moverHorizontalmente").value;
+                var posVert=document.getElementById("moverVerticalmente").value;
+
+
+                var altura=document.getElementById("imagem").height;
+
+
+                var tamLado=document.getElementById("ladoQuadrado").value;
+                tamLado=tamLado*largura/100;
+
+                var RI_yIn=posHor*largura/100;
+                var RI_xIn=posVert*altura/100;
+
+                var RI_xFim=RI_xIn+tamLado;
+                var RI_yFim=RI_yIn+tamLado;
+
+                if(RI_xFim>altura){
+                        tamLado=(altura-RI_xIn);
+                        RI_xFim=RI_xIn+tamLado;
+                                RI_yFim=RI_yIn+tamLado;
+                }
+                        if(RI_yFim>largura){
+                        tamLado=(largura-RI_yIn);
+                        RI_xFim=RI_xIn+tamLado;
+                                RI_yFim=RI_yIn+tamLado;
+                }
+
+                //converter imagem para matriz para tons de cinza
+                        let mat = cv.imread(imgElement);
+                        let image = new cv.Mat();
+                        let gray = new cv.Mat();
+                        cv.cvtColor(mat, gray, cv.COLOR_RGBA2GRAY, 0);
+                        gray.copyTo(image);
+
+                //desenhar retangulo (Mat& img, Point pt1, Point pt2, const Scalar& color, int thickness=1, int lineType=8, int shift=0)
+                let rect = new cv.Rect(RI_yIn,RI_xIn,tamLado,tamLado);
+                        let rectangleColor = new cv.Scalar(0, 0, 0);
+
+                        let point1 = new cv.Point(rect.x, rect.y);
+                        let point2 = new cv.Point(rect.x + rect.width, rect.y + rect.height);
+                        cv.rectangle(gray, point1, point2, rectangleColor, 2, cv.LINE_AA, 0);
+
+                //exibir imagem com o retangulo desenhado
+                        cv.imshow('canvasOutput', gray);
+
+
+                        //calcular co-ocorrencias
+                        var soma =0;
+                        var i;
+                        var j;
+
+                        for (i = RI_yIn; i < RI_yFim; i++) {
+                                for(j = RI_xIn; j< RI_xFim;j++){
+                                        soma=soma+image.ucharPtr(i,j)[0];
+                                }
+                        }
+                        //pij == image/soma
+
+                        //probabilidade maxima
+
+                        let result = cv.minMaxLoc(image);
+                        let max = result.maxVal;
+                let probMax=max/soma;
+                document.getElementById("ProbMax").innerHTML='Probabilidade Máxima: '+probMax.toString();
+
+                //correlacao
+
+                //calcular mr
+                let mr=0;
+                for (i = RI_yIn; i < RI_yFim; i++) {
+                                for(j = RI_xIn; j< RI_xFim;j++){
+                                        mr=mr+i*(image.ucharPtr(i,j)[0]/soma);
+                                }
+                        }
+
+                        //calcular mc
+                        let mc=0;
+                        for(j = RI_xIn; j< RI_xFim;j++){
+                                for (i = RI_yIn; i < RI_yFim; i++) {
+                                        mc=mc+j*(image.ucharPtr(i,j)[0]/soma);
+                                }
+                        }
+
+                        //calcular deltar
+                        let deltar=0;
+                for (i = RI_yIn; i < RI_yFim; i++) {
+                                for(j = RI_xIn; j< RI_xFim;j++){
+                                        deltar=deltar+(i-mr)*(i-mr)*(image.ucharPtr(i,j)[0]/soma);
+                                }
+                        }
+                        deltar=Math.sqrt(deltar);
+                        //calcular deltac
+                        let deltac=0;
+                        for(j = RI_xIn; j< RI_xFim;j++){
+                                for (i = RI_yIn; i < RI_yFim; i++) {
+                                        deltac=deltac+(j-mc)*(j-mc)*(image.ucharPtr(i,j)[0]/soma);
+                                }
+                        }
+                        deltac=Math.sqrt(deltac);
+
+                        //Agora podemos calcular a correlacao
+                        let correlacao=0;
+
+                        for (i = RI_yIn; i < RI_yFim; i++) {
+                                for(j = RI_xIn; j< RI_xFim;j++){
+                                        correlacao=correlacao+(i-mr)*(j-mc)*(image.ucharPtr(i,j)[0]/soma)/(deltac*deltar);
+                                }
+                        }
+
+                        document.getElementById("Correlacao").innerHTML='Correlação: '+correlacao.toString();
+                        //contraste
+
+                        let contraste=0;
+
+                        for (i = RI_yIn; i < RI_yFim; i++) {
+                                for(j = RI_xIn; j< RI_xFim;j++){
+                                        contraste=contraste+(i-j)*(i-j)*(image.ucharPtr(i,j)[0]/soma);
+                                }
+                        }
+
+
+
+                        document.getElementById("Contraste").innerHTML='Contraste: '+contraste.toString();
+
+                        //uniformidade
+
+                        let uniformidade=0;
+
+                        for (i = RI_yIn; i < RI_yFim; i++) {
+                                for(j = RI_xIn; j< RI_xFim;j++){
+                                        uniformidade=uniformidade+(image.ucharPtr(i,j)[0]/soma)*(image.ucharPtr(i,j)[0]/soma);
+                                }
+                        }
+
+                        document.getElementById("Uniformidade").innerHTML='Uniformidade: '+uniformidade.toString();
+
+                        //homogeneidade
+
+                        let homogeneidade=0;
+
+                        for (i = RI_yIn; i < RI_yFim; i++) {
+                                for(j = RI_xIn; j< RI_xFim;j++){
+                                        homogeneidade=homogeneidade+(image.ucharPtr(i,j)[0]/soma)/(1+Math.abs(i-j));
+                                }
+                        }
+
+
+                        document.getElementById("Homogeneidade").innerHTML='Homogeneidade: '+homogeneidade.toString();
+
+                        //entropia
+
+                        let entropia=0;
+
+                        for (i = RI_yIn; i < RI_yFim; i++) {
+                                for(j = RI_xIn; j< RI_xFim;j++){
+                                        if(image.ucharPtr(i,j)[0]!=0){
+                                                entropia=entropia+(image.ucharPtr(i,j)[0]/soma)*Math.log2(soma/image.ucharPtr(i,j)[0]);
+                                        }else{
+                                                entropia=entropia+(image.ucharPtr(i,j)[0]/soma)*Math.log2(soma/0.0001);
+                                        }
+
+                                }
+                        }
+                        document.getElementById("Entropia").innerHTML='Entropia: '+entropia.toString();
+
+                        mr.delete();
+                        mc.delete();
+                        deltar.delete();
+                        deltac.delete();
+                        correlacao.delete();
+                        contraste.delete();
+                        probMax.delete();
+                        uniformidade.delete();
+                        homogeneidade.delete();
+                        entropia.delete();
+                        max.delete();
+                        result.delete();
+                        pij.delete();
+                        posHor.delete();
+                        posVert.delete().
+                        tamLado.delete();
+                        altura.delete();
+                        largura.delete();
+                        RI_xIn.delete();
+                        RI_yIn.delete();
+                        RI_xFim.delete();
+                        RI_yFim.delete();
+                        gray.delete();
+                        mat.delete();
+                image.delete();
+                rect.delete();
+                rectangleColor.delete();
+                point1.delete();
+                point2.delete();
+
+                }
+
+
+                //redirecionar para a pagina inicial do trabalho
+                function Retornar()
+                {
+                        location.href="https://vanessadants.github.io/PDI/TrabFinal/index.html";
+                }
+
+                function onOpenCvReady() { // eslint-disable-line no-unused-vars
+                document.getElementById('status').innerHTML = '<b>OpenCV.js is ready</b>.' +
+                        'You can upload an image.<br>' +
+                        'The <b>imageSrc</b> is a &lt;img&gt; element used as cv.Mat input. ' +
+                        'The <b>canvasOutput</b> is a &lt;canvas&gt; element used as cv.Mat output.';
+                }
+
+                function onOpenCvError() { // eslint-disable-line no-unused-vars
+                let element = document.getElementById('status');
+                element.setAttribute('class', 'err');
+                element.innerHTML = 'Failed to load opencv.js';
+                }
+
+
+
+
+        </script>
+        <script async src="opencv.js" type="text/javascript" onload="onOpenCvReady();" onerror="onOpenCvError();"></script>
+
+        </body>
+
+        <footer>
+                <div id="footer" style="background-color:#9FB6CD;clear:both;text-align:center;float:bottom;font-size:12">
+                Trabalho da terceira unidade de Processamento Digital de Imagens da Universidade Federal do RN do curso de Engenharia da Computação. Este trabalho foi feito por Vanessa Dantas de Souto Costa (vanessa.dantas796@gmail.com) e  João Marcos Araújo do Valle (jmarcos.araujo96@gmail.com), professor orientador: Agostinho Brito Jr.
+                </div>
+
+        </footer>
+
+        </html>
 ´´´
 
 ## 7. Explicação do Código

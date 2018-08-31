@@ -443,10 +443,11 @@ Figure 5. Interface da aplicação
         </footer>
 
         </html>
+
 ´´´
 
 ## 7. Explicação do Código
-<p>Primeiramente, na estrutura do html implementamos o cabeçalho <head>, nele especificamos a cor de fundo através de style="background-colo:#4A708B". Veja: </p>
+<p>Primeiramente, na estrutura do html implementamos o cabeçalho <head>, nele especificamos a cor de fundo através de style="background-color:#4A708B". Veja: </p>
 
 ´´´html
 
@@ -466,7 +467,6 @@ Figure 5. Interface da aplicação
 
  <p>Para as informações de co-ocorrências exibidas, apenas criamos uma região do tipo texto, na qual pudéssemos exibir os resultados calculados.</p>
 
- ´´´javascript
 
         <h2 align="center" style="color:Black;" > Co-ocorrências </h2>
 
@@ -497,11 +497,10 @@ Figure 5. Interface da aplicação
         <br />
 
         <h3 align="center" style="color:Black;" > Definir Área de Interesse</h3>
- ´´´
+ 
 
  <p>Quanto aos sliders, utilizamos a classe "slidecontainer" que permite criar um elemento do tipo slider com range determinado (podemos determinar o valor mínimo e máximo). Qualquer modificação do valor do slider resulta na chamada da função change(), em onchange="change()".</p>
 
- ´´´javascript
 
     <div class="slidecontainer" id="slideContainer" style="margin-left:1em;height:30%">
 
@@ -516,51 +515,46 @@ Figure 5. Interface da aplicação
 
 
         </div>
- ´´´
+ 
 
 <p>Ainda, a última função implementada na div de id="Informacoes" foi o botão de retorno. Para tanto, criamos um elemento do tipo button que ao ser clicado executa a função Retornar em onclick="Retornar()", conforme:</p>
- ´´´javascript
+ 
 
-<!-- Botao para retornar à página principal-->
+        <!-- Botao para retornar à página principal-->
 
         <button onclick="Retornar()" id="botaoRetornar" style="margin-left:45%;">Retornar</button>
-´´´
+
 <p>Em seguida, na segunda parte do corpo da estrutura html <body>, foi criada a região para carregamento da imagem e exibição da região de interesse com id="CarregamentoDaImagem".</p>
 
 <p>Para o carregamento da imagem, utilizamos o tipo file para escolher o arquivo a ser carregado em:</p>
-´´´javacript
+
 
         <input type="file" name="myFile" id="fileUpload"/> <br />
-´´´
+
 <p>Este determinou a imagem a ser exibida no tipo imagem:</p>
-´´´javascript
 
         <img src="" alt="Carregar Imagem..." width="350em" height="" style="border:1px solid #d3d3d3;" id="imagem"/>
-´´´
+
 <p>Uma vez a imagem carregada, podemos determinar a região de interesse. Essa última foi exibida em uma estrutura do tipo canvas, própria para manipulação de imagens com o openCV.js</p>
-´´´javascript
 
         <canvas id="canvasOutput" width="" height="" style="border:1px solid #d3d3d3;"></canvas>
-´´´
+
 <p>Então exibimos essa estrutura inteira como uma tabela, para que a imagem de entrada e região de interesse ficassem uma ao lado da outra. Para isso usamos o tipo tabela:</p>
-´´´javascript
 
         <table style="background-color:#B0E2FF;height:100%;width:75%;" cellpadding="0" cellspacing="0" width="0" border="0" id="table">
-´´´
+
 <p>O responsável pelo carregamento da imagem e cálculo das co-ocorrências foi o script na linguagem JavaScript. Este inicia com:</p>
-´´´javascript
 
         <script src="opencv.js" type="text/javascript"></script>
         <script type="text/javascript">
-´´´
+
 <p>Permitindo o uso do openCV.js e finaliza com:</p>
-´´´javascript
 
         </script>
         <script async src="opencv.js" type="text/javascript" onload="onOpenCvReady();" onerror="onOpenCvError();"></script>
-´´´
+
 <p>Neste script, a primeira função realizada é a de abertura e carregamento da imagem. Isto é feia através de: </p>
-´´´javascript
+
 //carregar imagem
         let imgElement = document.getElementById('imagem');
         let inputElement = document.getElementById('fileUpload');
@@ -571,11 +565,11 @@ Figure 5. Interface da aplicação
         imgElement.onload = function() {
             change();
         };
-´´´
+
 <p>Nesta vemos que imgElement recebe o elemento imagem e que o inputElement recebe o file que foi escolhido pelo usuário para ser carregado. Assim, adicionamos o elemento a lista de eventos e fazemos a imagem receber como src o url do file escolhido. Ao carregar a imagem, chamamos a função change();</p>
 
 <p>Na função change(), primeiramente definimos a região de interesse, através do código:</p>
-´´´javascript
+
 
 //com base nos trackbars definimos a regiao de interesse RI
             var posHor=document.getElementById("moverHorizontalmente").value;
@@ -604,14 +598,14 @@ Figure 5. Interface da aplicação
                     RI_xFim=RI_xIn+tamLado;
                            RI_yFim=RI_yIn+tamLado;
             }
-´´´
+
 <p>Neste, calculamos o x inicial e final, bem como o y inicial e final. Em outras palavras, para cálculo das co-ocorrências, percorremos a imagem apenas nessa região. Vale ressaltar que utilizamos o sistema de coordenadas de openCV, cuja orientação é dada por:</p>
 
-![](/imagens/imagem6.png)
-Figure 6. Orientação utilizada, x corresponde à altura e y à largura da imagem
+![](imagens/imagem6.png)
+<p>Figure 6. Orientação utilizada, x corresponde à altura e y à largura da imagem</p>
 
 <p>Agora, podemos exibir a imagem (a imagem precisa ser em tons de cinza, por isso é feita uma conversão) no canvas e sua região de interesse, fazemos isso em:</p>
-´´´javascript
+
         //converter imagem para matriz para tons de cinza
                 let mat = cv.imread(imgElement);
                 let image = new cv.Mat();
@@ -629,9 +623,8 @@ Figure 6. Orientação utilizada, x corresponde à altura e y à largura da imag
 
             //exibir imagem com o retangulo desenhado
                 cv.imshow('canvasOutput', gray);
-´´´
+
 <p>No passo seguinte, é calculado os descritores de Haralick. Para isso, precisamos da somatória dos valores da matriz image de entrada dentro da região de interesse:</p>
-´´´javascript
 
                 var soma =0;
                 var i;
@@ -643,18 +636,18 @@ Figure 6. Orientação utilizada, x corresponde à altura e y à largura da imag
                         }
                 }
                 //pij == image/soma
-´´´
+
 <p>O cálculo da probabilidade máxima mostrado na "Figure4: Tabela com o cálculo dos descritores de Haralick" é então feito e exibido na região de texto destinada a mesma.</p>
-´´´javascript
+
         //probabilidade maxima
 
                 let result = cv.minMaxLoc(image);
                 let max = result.maxVal;
             let probMax=max/soma;
             document.getElementById("ProbMax").innerHTML='Probabilidade Máxima: '+probMax.toString();
-´´´
+
 <p>O cálculo da correlação mostrado na "Figure4" é então feito e exibido na região de texto destinada a mesma.</p>
-´´´javascript
+
         //correlacao
 
             //calcular mr
@@ -700,9 +693,9 @@ Figure 6. Orientação utilizada, x corresponde à altura e y à largura da imag
                 }
 
                 document.getElementById("Correlacao").innerHTML='Correlação: '+correlacao.toString();
-´´´javascript
+
 <p>O cálculo do contraste mostrado na "Figure4" é então feito e exibido na região na região de texto destinada a mesma.</p>
-´´´javascript
+
                 //contraste
 
                 let contraste=0;
@@ -716,9 +709,9 @@ Figure 6. Orientação utilizada, x corresponde à altura e y à largura da imag
 
 
                 document.getElementById("Contraste").innerHTML='Contraste: '+contraste.toString();
-´´´
+
 <p>O cálculo da uniformidade máxima mostrada na "Figure4" é então feito e exibido na região de texto destinada a mesma.</p>
-´´´javascript
+
                 //uniformidade
 
                 let uniformidade=0;
@@ -729,9 +722,9 @@ Figure 6. Orientação utilizada, x corresponde à altura e y à largura da imag
                         }
                 }
                 document.getElementById("Uniformidade").innerHTML='Uniformidade: '+uniformidade.toString();
-´´´
+
 <p>O cálculo da homogeneidade máxima mostrado na "Figure4" é então feito e exibido na região de texto destinada a mesma.</p>
-´´´javascript
+
                 //homogeneidade
 
                 let homogeneidade=0;
@@ -742,9 +735,9 @@ Figure 6. Orientação utilizada, x corresponde à altura e y à largura da imag
                         }
                 }
                 document.getElementById("Homogeneidade").innerHTML='Homogeneidade: '+homogeneidade.toString();
-´´´
+
 <p>O cálculo da entropia máxima mostrada na "Figure4" é então feito e exibido na região de texto destinada a mesma.</p>
-´´´javascript
+
                 //entropia
 
                 let entropia=0;
@@ -760,9 +753,9 @@ Figure 6. Orientação utilizada, x corresponde à altura e y à largura da imag
                         }
                 }
                 document.getElementById("Entropia").innerHTML='Entropia: '+entropia.toString();
-´´´
+
 <p>Antes de finalizar a função change(), liberamos o espaço ocupado pelas variáveis:</p>
-´´´javascript
+
                 mr.delete();
                 mc.delete();
                 deltar.delete();
@@ -792,17 +785,17 @@ Figure 6. Orientação utilizada, x corresponde à altura e y à largura da imag
                     rectangleColor.delete();
                     point1.delete();
                     point2.delete();
-´´´
+
 <p>Em seguida, descrevemos a função que permite que retorne à página anterior, ao clicar neste botão:</p>
-´´´javascript
+
         //redirecionar para a pagina inicial do trabalho
         function Retornar()
         {
                 location.href="https://vanessadants.github.io/PDI/TrabFinal/index.html";
         }
-´´´
+
 <p>As funções seguintes, servem para verificar se o openCV.js está pronto executar ou se houve erro:</p>
-´´´javascript
+
         function onOpenCvReady() { // eslint-disable-line no-unused-vars
             document.getElementById('status').innerHTML = '<b>OpenCV.js is ready</b>.' +
                 'You can upload an image.<br>' +
@@ -815,41 +808,41 @@ Figure 6. Orientação utilizada, x corresponde à altura e y à largura da imag
             element.setAttribute('class', 'err');
             element.innerHTML = 'Failed to load opencv.js';
         }
-´´´
+
 <p>Finalizado o script JavaScript e o corpo do html, inserimos um rodapé com informações sobre direitos autorais do trabalho.</p>
-´´´javascript
 
-<footer>
-        <div id="footer" style="background-color:#9FB6CD;clear:both;text-align:center;float:bottom;font-size:12">
+
+        <footer>
+                <div id="footer" style="background-color:#9FB6CD;clear:both;text-align:center;float:bottom;font-size:12">
         Trabalho da terceira unidade de Processamento Digital de Imagens da Universidade Federal do RN do curso de Engenharia da Computação. Este trabalho foi feito por Vanessa Dantas de Souto Costa (vanessa.dantas796@gmail.com) e  João Marcos Araújo do Valle (jmarcos.araujo96@gmail.com), professor orientador: Agostinho Brito Jr.
-        </div>
+                </div>
 
-</footer>
-´´´
+        </footer>
+
 
 ---
 ## 8. Uso da aplicação
 
 <p>Passo 1: Carregar a imagem</p>
 
-![](/imagens/imagem7.png)
-Figure 7. Clique para abrir o explorador de arquivos
+![](imagens/imagem7.png)
+<p>Figure 7. Clique para abrir o explorador de arquivos</p>
 
-![](/imagens/imagem8.png)
-Figure 8. Escolher a imagem a ser aberta
+![](imagens/imagem8.png)
+<p>Figure 8. Escolher a imagem a ser aberta</p>
 
 <p>Passo 2: Delimitar a região de interesse.</p>
 
-![](/imagens/imagem9.png)
-Figure 9. Movendo os sliders é possível delimitar a região de interesse
+![](imagens/imagem9.png)
+<p>Figure 9. Movendo os sliders é possível delimitar a região de interesse</p>
 
 <p>Pode-se perceber que modificar a região de interesse afeta diretamente nos cálculos:</p>
 
-![](/imagens/imagem10.png)
-Figure 10. Região de interesse 1
+![](imagens/imagem10.png)
+<p>Figure 10. Região de interesse 1</p>
 
-![](/imagens/imagem11.png)
-Figure 11. Região de interesse 2
+![](imagens/imagem11.png)
+<p>Figure 11. Região de interesse 2</p>
 
 ## 9. Conclusões
 

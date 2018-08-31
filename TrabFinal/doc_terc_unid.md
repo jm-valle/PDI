@@ -24,7 +24,7 @@ Autores: João Marcos Araújo do Valle <jmarcos.araujo96@gmail.com>, Vanessa Dan
 Este material consiste no Trabalho Final da disciplina DCA0445 - Processamento Digital de Imagens lecionada por Agostinho Brito Jr.
 
 ## 1. Aplicação
-Acessar via [Aplicação](index.html)
+Acessar via [Aplicação](codigo/index.html)
 
 ---
 
@@ -844,3 +844,10 @@ Também é importante destacar que geralmente as imagens analisadas apresentam a
 
 ## 10. Referências
 
+![](http://www2.ic.uff.br/~aconci/co-ocorrencia.pdf)
+
+![](https://docs.opencv.org/3.4.1/d4/da1/tutorial_js_setup.html)
+
+![](https://docs.opencv.org/3.4.1/df/df7/tutorial_js_table_of_contents_setup.html)
+
+![](http://wiki.icmc.usp.br/images/d/d7/Dip10_imagedescription-texture.pdf)

@@ -86,7 +86,8 @@ Figure 5. Interface da aplicação
 ## 6. Código Desenvolvido
 <p> Para o trabalho descrito, desenvolvemos um código utilizando as linguagens Html e JavaScript. O Html foi responsável pela criação da estrutura da página WEB, já o CSS permitiu estilização da página. Por fim, o JavaScript corresponde ao funcionamento da estrutura WEB. Ele que possibilitou o uso de recursos do openCV.js para manipulação de imagens. Abaixo, o código desenvolvido: </p>
 
-´´´javascript
+´´´html
+
         <html>
 
         <head>
@@ -447,17 +448,18 @@ Figure 5. Interface da aplicação
 ## 7. Explicação do Código
 <p>Primeiramente, na estrutura do html implementamos o cabeçalho <head>, nele especificamos a cor de fundo através de style="background-colo:#4A708B". Veja: </p>
 
-´´´javascript
-<html>
+´´´html
 
-<head>
-<meta charset="utf-8">
-<div id="header" style="background-color:#4A708B;">
-<h1 align="center" style="margin-bottom:0;color:white;" >Cálculo de Co-ocorrências e momentos estatísticos de uma região da imagem</h1>
+        <html>
 
-</div>
+        <head>
+        <meta charset="utf-8">
+        <div id="header" style="background-color:#4A708B;">
+        <h1 align="center" style="margin-bottom:0;color:white;" >Cálculo de Co-ocorrências e momentos estatísticos de uma região da imagem</h1>
 
-</head>
+        </div>
+
+        </head>
 ´´´
 
 <p>Em seguida, na primeira parte do corpo da estrutura html "<body>", foi criada a região para exibir os cálculoiis das co-ocorrências e os sliders responsáveis pela delimitação da região de interesse, bem como o botão de retorno. Esta região foi criada com id="Informacoes".</p>

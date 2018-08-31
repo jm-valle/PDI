@@ -844,10 +844,10 @@ Também é importante destacar que geralmente as imagens analisadas apresentam a
 
 ## 10. Referências
 
-http://www2.ic.uff.br/~aconci/co-ocorrencia.pdf
+<p>http://www2.ic.uff.br/~aconci/co-ocorrencia.pdf</p>
 
-![](https://docs.opencv.org/3.4.1/d4/da1/tutorial_js_setup.html)
+<p>https://docs.opencv.org/3.4.1/d4/da1/tutorial_js_setup.html</p>
 
-![](https://docs.opencv.org/3.4.1/df/df7/tutorial_js_table_of_contents_setup.html)
+<p>https://docs.opencv.org/3.4.1/df/df7/tutorial_js_table_of_contents_setup.html</p>
 
-![](http://wiki.icmc.usp.br/images/d/d7/Dip10_imagedescription-texture.pdf)
+<p>http://wiki.icmc.usp.br/images/d/d7/Dip10_imagedescription-texture.pdf</p>

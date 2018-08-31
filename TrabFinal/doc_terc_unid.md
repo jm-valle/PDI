@@ -26,7 +26,7 @@ Autores: João Marcos Araújo do Valle <jmarcos.araujo96@gmail.com>, Vanessa Dan
 Este material consiste no Trabalho Final da disciplina DCA0445 - Processamento Digital de Imagens lecionada por Agostinho Brito Jr.
 
 ## 1. Aplicação
-Acessar via [Aplicação](index.hmtml)
+Acessar via [Aplicação](index.html)
 
 ---
 
@@ -51,18 +51,18 @@ Também é importante destacar que geralmente as imagens analisadas apresentam a
 <p>Foi mencionado anteriormente que existem vários métodos de se calcular a matriz de co-ocorrência de uma imagem, o que é fácil de perceber quando relacionado com o conceito de vizinhança de um pixel. Se a matriz de co-ocorrência é definida como uma tabela de combinações de tons de cinza ocorridos em uma imagem, é justificável que essa tabela possa ser criada de qualquer combinação entre pixels relacionados através de uma vizinhança. Isso quer dizer que uma matriz de co-ocorrência pode ser calculada utilizando qualquer um dos oito pixels da vizinhança do pixel atual.</p>
 <p>Matematicamente, uma matriz de co-ocorrência P pode ser definida em função de quatro valores _P(i, j, d, Theta)_. Onde i e j são os pixels vizinhos de acordo com a distância d. Essa distância d entre os pixels i e j é analisada de acordo com uma direção Theta, como pode ser observado na imagem abaixo.</p>
 
-[](/imagens/imagem1.png)
+![](imagens/imagem1.png)
 Figure 2. Valores possíveis para Theta
 
 <p>Para cada ângulo (0º, 45º, 90º e 135º) é possível calcular duas matrizes de co-ocorrência, totalizando assim oito matrizes no total. Também é possível calcular uma matriz para cada direção orientada por ângulo, o que resulta em quatro matrizes (horizontal, vertical e duas diagonais). Existem várias vantagens no cálculo desse tipo de matriz, uma delas é que a matriz de co-ocorrência conterá mais informação que uma criada apenas para apenas uma direção orientada por um ângulo.</p>
 <p>Outra vantagem da matriz de co-ocorrência para cada direção orientada por ângulo é que ela pode ser facilmente calculada a partir da matriz de co-ocorrência normal de cada direção, visto que ela será a soma dos elementos da matriz espelhados pela diagonal da matriz.</p>
 
-[](/imagens/imagem2.png)
+![](imagens/imagem2.png)
 Figure 2. Cálculo da matriz de co-ocorrência para P(i,j,1,0º)
 
 <p>Após P ser calculada, normalmente, é também normalizada pela soma total de seus valores, criando assim uma matriz de probabilidade de co-ocorrências p(i,j) onde</p>
 
-[](/imagens/imagem3.png)
+[](imagens/imagem3.png)
 Figure 3. Matriz de probabilidade
 
 <p>A partir dessa matriz de probabilidades _p(i,j)_ é que as principais informações contidas na imagem serão retiradas.</p>
@@ -72,7 +72,7 @@ Figure 3. Matriz de probabilidade
 <p>Apesar de uma matriz de co-ocorrência, por si só, apresentar muita informação, esta informação geralmente não é de fácil entendimento. Sendo assim, a partir dessa matriz, são calculados valores numéricos que facilitam o entendimento da informação que a matriz trás.</p>
 <p>Estes valores, denominados descritores, são fundamentais para a análise de uma matriz de co-ocorrência. Haralick, em 1973, propôs 14 descritores diferentes que poderiam ser utilizados para a extração de informação da matriz de co-ocorrência, neste trabalho, foram implementados seis descritores de Haralick, mostrados na tabela abaixo.</p>
 
-[](/imagens/imagem4.png)
+![](imagens/imagem4.png)
 Figure 4. Tabela com o cálculo dos descritores de Haralick
 
 ---
@@ -80,7 +80,7 @@ Figure 4. Tabela com o cálculo dos descritores de Haralick
 ## 5. Interface
 <p>Para a aplicação desenvolvida, implementamos uma interface dividida entre cabeçalho, corpo e rodapé. No cabeçalho, inserimos o título do trabalho "Cálculo de Co-ocorrências e momentos estatísticos de  uma região da imagem". No corpo, foram criadas duas regiões, uma destinada para o carregamento da imagem e exibição da região de interesse, e outra, para exibir as informações de co-ocorrências e modificar os parâmetros que delimitam a região de interesse (representada por um quadrado preto). No rodapé, apenas inserimos informações acerca do trabalho e direitos autorais. Além disso, foi feito um botão de retorno, permitindo ao usuário voltar a página do relatório do trabalho. Conforme a imagem:</p>
 
-[](/imagens/imagem5.png)
+![](/imagens/imagem5.png)
 Figure 5. Interface da aplicação
 
 ## 6. Código Desenvolvido

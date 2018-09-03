@@ -5,8 +5,8 @@ João Marcos Araújo do Valle <jmarcos.araujo96@gmail.com>
 
 ---
 ## Exercises
-<p>The website where the code and explanation can be accessed [here.](https://jm-valle.github.io/PDI/listas/).</p>
-<p>The files can be accessed [here.](https://github.com/jm-valle/PDI/Exemplos/).</p>
+<p>The website where the code and explanation can be accessed [here.](https://jm-valle.github.io/PDI/listas/)</p>
+<p>The files can be accessed [here.](https://github.com/jm-valle/PDI/Exemplos/)</p>
 
 ---
 ## Final Project

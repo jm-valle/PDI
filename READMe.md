@@ -5,10 +5,10 @@ João Marcos Araújo do Valle <jmarcos.araujo96@gmail.com>
 
 ---
 ## Exercises
-<p>The website where the code and explanation can be accessed [here.](https://jm-valle.github.io/PDI/listas)</p>
-<p>The files can be accessed [here.](https://github.com/jm-valle/PDI/Exemplos)</p>
+<p>The website where the code and explanation can be accessed [here.] (https://jm-valle.github.io/PDI/listas)</p>
+<p>The files can be accessed [here] (https://github.com/jm-valle/PDI/Exemplos)</p>
 
 ---
 ## Final Project
-<p>The final project consisted on a html page that calculates Haralick Markers using co-ocurrence matrices of a uploaded image. In this project, six Haralick Markers were calculated, and the description of the project, in portuguese, can be accessed [here.](https://jm-valle.github.io/PDI/TrabFinal/doc_terc_unid.html)</p>
-<p>The application can be acessed [here.](https://jm-valle.github.io/PDI/TrabFinal/codigo/index.html)</p>
+<p>The final project consisted on a html page that calculates Haralick Markers using co-ocurrence matrices of a uploaded image. In this project, six Haralick Markers were calculated, and the description of the project, in portuguese, can be accessed [here.] (https://jm-valle.github.io/PDI/TrabFinal/doc_terc_unid.html)</p>
+<p>The application can be acessed [here.] (https://jm-valle.github.io/PDI/TrabFinal/codigo/index.html)</p>
